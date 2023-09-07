@@ -38,7 +38,6 @@ jobs:
     - name: Run GPT Translate
       uses: 3ru/gpt-translate@v1.1.5
       with:
-        github-token: ${{ secrets.PAT }}
         apikey: ${{ secrets.OPENAI_API_KEY }}
         model: "gpt-3.5-turbo-16k"
         inputFiles: ${{ steps.changed_files.outputs.files }}

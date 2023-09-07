@@ -15,6 +15,8 @@ on:
     - 'da/**/*' 
     - 'nl/**/*' 
     - 'sv/**/*'
+    - 'radarr/cardigann-yml-definition.md'
+    - 'radarr/supported-indexers.md'
     - 'assets/**/*'
     - 'images/**/*'
     - 'scripts/**/*'
@@ -41,6 +43,6 @@ jobs:
         apikey: ${{ secrets.OPENAI_API_KEY }}
         model: "gpt-3.5-turbo-16k"
         inputFiles: ${{ steps.changed_files.outputs.files }}
-        outputFiles: 'zh/prowlarr/*.md de/prowlarr/*.md fr/prowlarr/*.md nb/prowlarr/*.md ja/prowlarr/*.md ko/prowlarr/*.md da/prowlarr/*.md nl/prowlarr/*.md sv/prowlarr/*.md'
+        outputFiles: 'zh/radarr/*.md de/radarr/*.md fr/radarr/*.md nb/radarr/*.md ja/radarr/*.md ko/radarr/*.md da/radarr/*.md nl/radarr/*.md sv/radarr/*.md'
         languages: 'Simplified-Chinese German French Norwegian Japanese Korean Danish Dutch Swedish'
         prompt: "I am translating the documentation for helping users.\ Translate the Markdown content I'll paste later into {targetLanguage}.\ You must strictly follow the rules below.\ - Never change the Markdown markup structure. Don't add or remove links. Do not change any URL.\ - Never change the contents of code blocks even if they appear to have a bug.\ - Always preserve the original line breaks. Do not add or remove blank lines.\ - Never touch the permalink such as `{/*examples*/}` at the end of each heading.\ - Never touch HTML-like tags such as `<Notes>`."
